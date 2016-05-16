@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Results</title>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li>
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/results">
+                        Results
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <th>
+                    Candidate
+                </th>
+                <th>
+                    Votes
+                </th>
+            </tr>
+            {% for key in candidates.sorted_keys() %}
+            <tr> 
+                <td>
+                    {{ key }}
+                </td>
+                <td>
+                    {{ candidates[key] }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form name='form' method='POST'>
+            <input type="submit" name="submit"
+                                 value="Clear">
+        </form>
+    </body>
+</html>
